@@ -1,0 +1,19 @@
+references:
+    basepath: "/ELS/els9/users/biosciences/references"
+    provider: "ncbi"
+    genome_release: "Ovis_aries_4.0"
+
+genome_fasta: "oar_ref_Oar_v4.0_fixChr.fa"
+
+
+paths:
+  to_gatk: "/ELS/els9/users/biosciences/software/gatk3.7"
+  to_tmp: "/tmp"
+
+rules:
+    depth_coverage:
+        params: "-ct 15 -ct 20 -ct 30 -nt 5 --omitDepthOutputAtEachBase --omitIntervalStatistics --omitLocusTable --countType COUNT_READS"
+
+
+samples: samples.tsv
+units: units.tsv
