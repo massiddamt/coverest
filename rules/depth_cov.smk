@@ -1,6 +1,6 @@
 rule depth_coverage:
     input:
-        expand("reads/recalibrated/{sample.sample}.dedup.recal.bam", sample=samples.reset_index().itertuples())
+        bamlist = os.listdir(config.get("paths").get("to_sample"))
     output:
         expand("coverage/{sample.sample}.depthOfCov.COUNT_READS", sample=samples.reset_index().itertuples())
 
@@ -15,7 +15,7 @@ rule depth_coverage:
         "gatk -T DepthOfCoverage "
         "-R {params.genome} "
         "{params.depth_coverage_config} "
-        "-I {input} "
+        "-I {input.bamlist} "
         "-O {output} "
         ">& {log}"
 
