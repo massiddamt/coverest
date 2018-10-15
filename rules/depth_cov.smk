@@ -5,10 +5,9 @@ def get_path(wildcards,samples,header='bamlist'):
 rule depth_coverage:
     input:
         lambda wildcards: get_path(wildcards, samples, 'bamlist')
-        #expand("{sample.bamlist}", sample=bamlist.reset_index().itertuples())
 
     output:
-       "reads/cov/{sample}.depthOfCov.COUNT_READS.sample_summary"
+       "reads/cov/{sample}.depthOfCov.COUNT_READS.sample_summary",
        "reads/cov/{sample}.depthOfCov.COUNT_READS.sample_statistics"
 
     params:
