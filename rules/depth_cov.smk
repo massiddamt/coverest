@@ -1,6 +1,6 @@
 rule depth_coverage:
     input:
-        samples.bamlist
+        expand("{sample.bamlist}", sample=bamlist.reset_index().itertuples())
 
     output:
         expand("reads/cov/{sample.sample}.depthOfCov.COUNT_READS", sample=samples.reset_index().itertuples())
@@ -10,7 +10,7 @@ rule depth_coverage:
         depth_coverage_config=config.get("rules").get("depth_coverage").get("params")
 
     log:
-        "logs/gatk/DepthOfCoverage/{sample.sample}.coverage_info.log"
+        expand("logs/gatk/DepthOfCoverage/{sample.sample}.coverage_info.log", sample=samples.reset_index().itertuples())
 
     threads: 4
 
@@ -19,5 +19,5 @@ rule depth_coverage:
         "-R {params.genome} "
         "{params.depth_coverage_config} "
         "-I {input} "
-        "-O {output} "
+        "-o {output} "
         ">& {log}"

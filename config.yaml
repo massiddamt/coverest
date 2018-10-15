@@ -13,7 +13,7 @@ paths:
 
 rules:
     depth_coverage:
-        params: "-ct 15 -ct 20 -ct 30 -nt 5 --omitDepthOutputAtEachBase --omitIntervalStatistics --omitLocusTable --countType COUNT_READS"
+        params: "-ct 15 -ct 20 -ct 30 -nt 8 --omitDepthOutputAtEachBase --omitIntervalStatistics --omitLocusTable --countType COUNT_READS"
 
 
 samples: my.bam.list
