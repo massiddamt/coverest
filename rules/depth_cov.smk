@@ -1,6 +1,6 @@
 rule depth_coverage:
     input:
-        config.get("bam_list")
+        samples.bamlist
 
     output:
         expand("reads/cov/{sample.sample}.depthOfCov.COUNT_READS", sample=samples.reset_index().itertuples())

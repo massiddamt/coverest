@@ -10,7 +10,7 @@ configfile: "config.yaml"
 
 
 samples = pd.read_table(config["samples"], index_col="sample")
-
+bamlist = pd.read_table(config["samples"], index_col="bamlist")
 rule all:
     input:
         expand("reads/cov/{sample.sample}.depthOfCov.COUNT_READS", sample=samples.reset_index().itertuples())

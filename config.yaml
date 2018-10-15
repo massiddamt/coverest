@@ -16,5 +16,4 @@ rules:
         params: "-ct 15 -ct 20 -ct 30 -nt 5 --omitDepthOutputAtEachBase --omitIntervalStatistics --omitLocusTable --countType COUNT_READS"
 
 
-samples: samples.tsv
-bam_list: my.bam.list
+samples: my.bam.list
