@@ -1,3 +1,3 @@
 sample	bamlist
-ERS179576	/home/matteo/Scrivania/crs4_pipelines/coverage/reads/recalibrated/ERS179576.dedup.recal.bam
-ERS179577	/home/matteo/Scrivania/crs4_pipelines/coverage/reads/recalibrated/ERS179577.dedup.recal.bam
+ERS179576	/home/matteo/Scrivania/crs4_pipelines/coverest/reads/recalibrated/ERS179576.dedup.recal.bam
+ERS179577	/home/matteo/Scrivania/crs4_pipelines/coverest/reads/recalibrated/ERS179577.dedup.recal.bam
