@@ -1,7 +1,7 @@
 references:
     basepath: "/ELS/els9/users/biosciences/references"
     provider: "ncbi"
-    genome_release: "Ovis_aries_4.0"
+    release: "Ovis_aries_4.0"
 
 genome_fasta: "oar_ref_Oar_v4.0_fixChr.fa"
 
@@ -17,3 +17,4 @@ rules:
 
 
 samples: samples.tsv
+bam_list: my.bam.list
