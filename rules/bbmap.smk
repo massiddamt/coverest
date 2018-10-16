@@ -17,7 +17,7 @@ rule bbmap:
     log:
         "logs/bbmap/{sample}.bbmap_coverage_info.log"
 
-    threads: 8
+    threads: 5
 
     shell:
         "pileup.sh "

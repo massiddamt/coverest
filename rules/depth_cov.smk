@@ -17,7 +17,7 @@ rule depth_coverage:
     log:
         "logs/gatk/DepthOfCoverage/{sample}.coverage_info.log"
 
-    threads: 8
+    threads: 5
 
     shell:
         "gatk -T DepthOfCoverage "
@@ -25,4 +25,5 @@ rule depth_coverage:
         "{params.depth_coverage_config} "
         "-I {input} "
         "-o {output} "
+        "-nt {threads} "
         ">& {log}"
