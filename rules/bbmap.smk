@@ -25,5 +25,5 @@ rule bbmap:
         "out = {output.covstats} "
         "hist = {output.hist} "
         "bincov = {output.bincov} "
-        "binsize = {params} "
+        "{params} "
         ">& {log}"

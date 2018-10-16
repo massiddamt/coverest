@@ -15,6 +15,6 @@ rules:
     depth_coverage:
         params: "-ct 15 -ct 20 -ct 30 -nt 8 --omitDepthOutputAtEachBase --omitIntervalStatistics --omitLocusTable --countType COUNT_READS"
     bbmap:
-        params: "1000000"
+        params: "binsize = 1000000 "
 
 samples: my.bam.list
