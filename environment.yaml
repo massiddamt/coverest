@@ -11,3 +11,4 @@ dependencies:
 - r-ggplot2=2.2.0
 - r-reshape=0.8.6
 - r-gplots=3.0.1
+- bbmap
