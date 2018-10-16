@@ -12,8 +12,8 @@ rule all:
         expand("reads/cov/{sample.sample}.depthOfCov.COUNT_READS.sample_statistics", sample=samples.reset_index().itertuples()),
         expand("reads/cov/bbmap/{sample.sample}.bbmap.covstats.txt", sample=samples.reset_index().itertuples()),
         expand("reads/cov/bbmap/{sample.sample}.bbmap.hist.txt", sample=samples.reset_index().itertuples()),
-        expand("reads/cov/bbmap/{sample.sample}.bbmap.bincov.txt", sample=samples.reset_index().itertuples())
-
+        expand("reads/cov/bbmap/{sample.sample}.bbmap.bincov.txt", sample=samples.reset_index().itertuples()),
+        "qc/multiqc.html"
 ##### load rules #####
 
 include_prefix="rules"
@@ -24,3 +24,5 @@ include:
     include_prefix + "/depth_cov.smk"
 include:
     include_prefix + "/bbmap.smk"
+include:
+    include_prefix + "/multiqc.smk"

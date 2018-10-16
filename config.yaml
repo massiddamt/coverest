@@ -10,11 +10,13 @@ paths:
   to_gatk: "/ELS/els9/users/biosciences/software/gatk3.7"
   to_tmp: "/tmp"
   to_sample: "reads/recalibrated"
+#  to_diva: "divapath/"
 
 rules:
     depth_coverage:
         params: "-ct 15 -ct 20 -ct 30 -nt 8 --omitDepthOutputAtEachBase --omitIntervalStatistics --omitLocusTable --countType COUNT_READS"
     bbmap:
         params: "binsize = 1000000 "
-
+    multiqc:
+        arguments: ""
 samples: my.bam.list
