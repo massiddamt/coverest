@@ -7,9 +7,9 @@ rule bbmap:
         lambda wildcards: get_path(wildcards, samples, 'bamlist')
 
     output:
-       covstats = "reads/cov/bbmap/{sample}.bbmap.covstats.txt",
-       hist = "reads/cov/bbmap/{sample}.bbmap.hist.txt",
-       bincov = "reads/cov/bbmap/{sample}.bbmap.bincov.txt"
+       covstats = "cov/bbmap/{sample}.bbmap.covstats.txt",
+       hist = "cov/bbmap/{sample}.bbmap.hist.txt",
+       bincov = "cov/bbmap/{sample}.bbmap.bincov.txt"
 
     params:
         config.get("rules").get("bbmap").get("params")
@@ -17,13 +17,16 @@ rule bbmap:
     log:
         "logs/bbmap/{sample}.bbmap_coverage_info.log"
 
+    conda:
+       "../envs/bbmap.yaml"
+
     threads: 5
 
     shell:
         "pileup.sh "
-        "in = {input} "
-        "out = {output.covstats} "
-        "hist = {output.hist} "
-        "bincov = {output.bincov} "
+        "in={input} "
+        "out={output.covstats} "
+        "hist={output.hist} "
+        "bincov={output.bincov} "
         "{params} "
         ">& {log}"

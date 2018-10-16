@@ -3,5 +3,5 @@ channels:
 - conda-forge
 - defaults
 dependencies:
-- snakemake==4.8.1
-- drmaa==0.7.8
+- bbmap=38.22
+- samtools=1.9
