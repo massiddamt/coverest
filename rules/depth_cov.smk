@@ -6,7 +6,7 @@ rule active_gatk:
         config.get("paths").get("to_gatk")
 
     conda:
-        "../envs/multiqc.yaml"
+        "../envs/gatk.yaml"
     shell:
         "gatk-register {params}/GenomeAnalysisToolkit.jar "
 

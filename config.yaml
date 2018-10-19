@@ -10,7 +10,8 @@ paths:
   to_gatk: "/ELS/els9/users/biosciences/software/gatk3.7"
   to_tmp: "/tmp"
   to_sample: "reads/recalibrated"
-
+  to_bbmap_out: "cov/bbmap/"
+  to_gatkdoc_out: "cov"
 
 rules:
     depth_coverage:
