@@ -5,3 +5,4 @@ channels:
 dependencies:
 - snakemake==4.8.1
 - drmaa==0.7.8
+- gatk=3.7

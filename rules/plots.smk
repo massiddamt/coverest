@@ -37,7 +37,7 @@ rule plot_bbmap_coverage_singlesample:
 
 rule plot_bbmap_coverage_on_chromosomes:
     input:
-        "/home/matteo/Scrivania/coverest_plots/bbmap/"
+        "cov/bbmap/"
     output:
         "cov/plots/mean_coverage_bbmap_from_covstats.pdf"
     params:

@@ -5,8 +5,6 @@ rule active_gatk:
     params:
         config.get("paths").get("to_gatk")
 
-    conda:
-        "../envs/gatk.yaml"
     shell:
         "gatk-register {params}/GenomeAnalysisToolkit.jar "
 
@@ -30,9 +28,6 @@ rule depth_coverage:
 
     log:
         "logs/gatk/DepthOfCoverage/{sample}.coverage_info.log"
-
-    conda:
-       "../envs/gatk.yaml"
 
     threads: 5
 
