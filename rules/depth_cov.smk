@@ -6,7 +6,7 @@ rule active_gatk:
         config.get("paths").get("to_gatk")
 
     shell:
-        "gatk-register {params}/GenomeAnalysisToolkit.jar "
+        "gatk-register {params}/GenomeAnalysisTK.jar "
 
 
 
