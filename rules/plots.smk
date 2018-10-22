@@ -4,10 +4,8 @@ rule plot_bbmap_coverage:
         "cov/bbmap/"
     output:
         "cov/plots/bbmap_coverage_hist.pdf"
-    conda:
-        "../envs/plots.yaml"
     script:
-        """../scripts/bbmap_coverage.R"""
+        "../scripts/bbmap_coverage.R"
 
 
 
@@ -16,22 +14,18 @@ rule plot_depthofcoverage:
         "cov/"
     output:
         "cov/plots/gatk_coverage_hist.pdf"
-    conda:
-        "../envs/plots.yaml"
     script:
-        """../scripts/depthofcoverage.R"""
+        "../scripts/depthofcoverage.R"
 
 
 
 rule plot_bbmap_coverage_singlesample:
     input:
-        "/home/matteo/Scrivania/coverest_plots/bbmap/"
+        "cov/bbmap/"
     params:
         28
-    conda:
-        "../envs/plots.yaml"
     script:
-        """../scripts/bbmap_singlesample.R"""
+        "../scripts/bbmap_singlesample.R"
 
 
 
@@ -42,7 +36,5 @@ rule plot_bbmap_coverage_on_chromosomes:
         "cov/plots/mean_coverage_bbmap_from_covstats.pdf"
     params:
         28
-    conda:
-        "../envs/plots.yaml"
     script:
-        """../scripts/bbmap_cov_chroms.R"""
+        "../scripts/bbmap_cov_chroms.R"
