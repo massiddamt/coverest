@@ -1,6 +1,6 @@
 rule active_gatk:
     output:
-        touch("gatk_activation.done")
+        touch("logs/gatk/gatk_activation.done")
 
     params:
         config.get("paths").get("to_gatk")
@@ -16,8 +16,8 @@ def get_path(wildcards,samples,header='bamlist'):
 
 rule depth_coverage:
     input:
-        lambda wildcards: get_path(wildcards, samples, 'bamlist'),
-        "gatk_activation.done"
+        input = lambda wildcards: get_path(wildcards, samples, 'bamlist'),
+        gatk = "gatk_activation.done"
 
     output:
        "cov/{sample}.depthOfCov.COUNT_READS.sample_summary"
@@ -37,7 +37,7 @@ rule depth_coverage:
             "gatk -T DepthOfCoverage "
             "-R {params.genome} "
             "{params.depth_coverage_config} "
-            "-I {input} "
+            "-I {input.input} "
             "-o {file_basename} "
             "-nt {threads} "
             ">& {log} ")
