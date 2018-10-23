@@ -9,16 +9,17 @@ samples = pd.read_table(config["samples"], index_col="sample")
 
 rule all:
     input:
-        "gatk_activation.done",
+        "logs/gatk/gatk_activation.done",
         expand("cov/{sample.sample}.depthOfCov.COUNT_READS.sample_summary", sample=samples.reset_index().itertuples()),
 #        expand("cov/{sample.sample}.depthOfCov.COUNT_READS.sample_statistics", sample=samples.reset_index().itertuples()),
         expand("cov/bbmap/{sample.sample}.bbmap.covstats.txt", sample=samples.reset_index().itertuples()),
         expand("cov/bbmap/{sample.sample}.bbmap.hist.txt", sample=samples.reset_index().itertuples()),
         expand("cov/bbmap/{sample.sample}.bbmap.bincov.txt", sample=samples.reset_index().itertuples()),
         "qc/multiqc.html",
-        "cov/plots/bbmap_coverage_hist.pdf",
-        "cov/plots/gatk_coverage_hist.pdf",
-        "cov/plots/mean_coverage_bbmap_from_covstats.pdf"
+        "cov/plots/bbmap_coverage.pdf",
+        "cov/plots/gatk_coverage.pdf",
+#        "cov/plots/mean_coverage_bbmap_from_covstats.pdf",
+#        expand("cov/plots/singlesamples/{sample.sample}.coverage_bbmap_CHROMOSOME.pdf", sample=samples.reset_index().itertuples())
 
 ##### load rules #####
 
