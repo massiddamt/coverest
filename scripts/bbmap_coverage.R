@@ -16,10 +16,13 @@ for(sample in file_list){
   coverage_df[line_index,2]=b[,2]
 }
 write.table(coverage_df,file = paste(out_folder,"summary/","bbmap_coverage_summary.tsv",sep = ""), sep = "\t", quote = F,row.names = F)
-pdf(file = paste(out_folder,"bbmap_coverage_hist.pdf",sep = ""), width = 15, height = 10)
+my_max=round(max(coverage_df$mean))+1
+pdf(file = paste(out_folder,"bbmap_coverage.pdf",sep = ""), width = 15, height = 10)
 par(mar=c(10.1, 4.1, 4.1, 2.1))
-barplot(coverage_df$mean,ylab = "MEAN COVERAGE", las=2, names.arg = coverage_df$sample_id, cex.names = c(0.8))
+barplot(coverage_df$mean,ylab = "MEAN COVERAGE", las=2, names.arg = coverage_df$sample_id, cex.names = c(0.8), ylim = c(0,my_max),axes = F)
+axis(side = 2, at = c(seq(0,my_max,5)), las=1) #, seq(10, 50, 5)))
 abline(a=30,b=0, col="red")
+abline(a=10,b=0, col="red")
 dev.off()
 
 #####################
