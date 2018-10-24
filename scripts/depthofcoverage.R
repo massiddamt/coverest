@@ -16,9 +16,10 @@ for(sample in file_list){
   coverage_df[line_index,1:9]=b[1,1:9]
 }
 coverage_df$sample_id=rownames(coverage_df)
-write.table(coverage_df,file = paste(out_folder,"gatk_coverage_summary.tsv",sep = ""), sep = "\t", quote = F,row.names = F)
+write.table(coverage_df,file = paste(out_folder,"summary/","gatk_coverage_summary.tsv",sep = ""), sep = "\t", quote = F,row.names = F)
 my_max=round(max(coverage_df$mean))+1
-pdf(file = paste(out_folder,"gatk_coverage.pdf",sep = ""), width = 15, height = 10)
+#pdf(file = paste(out_folder,"gatk_coverage.pdf",sep = ""), width = 15, height = 10)
+png(filename = paste(out_folder,"gatk_coverage.png",sep = ""), width = 650, height = 650, units = 'px', res = NA, type = "cairo")
 par(mar=c(10.1, 4.1, 4.1, 2.1))
 barplot(coverage_df$mean,ylab = "MEAN COVERAGE", las=2, names.arg = coverage_df$sample_id, cex.names = c(0.8),ylim = c(0,my_max),axes = F)
 axis(side = 2, at = c(seq(0,my_max,5)), las=1) #, seq(10, 50, 5)))
