@@ -7,7 +7,7 @@ rule multiqc:
        expand("cov/bbmap/{sample.sample}.bbmap.bincov.txt", sample=samples.reset_index().itertuples())
 
     output:
-        "qc/multiqc.html"
+        report("qc/multiqc.html", caption="../report/multiqc.rst", category="MULTIQC")
     params:
         config.get("rules").get("multiqc").get("arguments")
     log:

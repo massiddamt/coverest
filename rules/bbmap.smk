@@ -30,3 +30,4 @@ rule bbmap:
         "bincov={output.bincov} "
         "{params} "
         ">& {log}"
+
