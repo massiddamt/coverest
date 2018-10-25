@@ -24,6 +24,4 @@ axis(side = 2, at = c(seq(0,round(my_max+1),5)), las=1) #, seq(10, 50, 5)))
 abline(a=30,b=0, col="red")
 abline(a=10,b=0, col="red")
 dev.off()
-
-
 #####################
