@@ -1,16 +1,16 @@
 import pandas as pd
 
-
 ##### load config and sample sheets #####
 report: "report/workflow.rst"
 
-#configfile: "config.yaml"
+configfile: "config.yaml"
 
 samples = pd.read_table(config["samples"], index_col="sample")
 
 rule all:
     input:
         "logs/gatk/gatk_activation.done",
+        "cov/plots/testfile2.html",
 #        expand("cov/{sample.sample}.depthOfCov.COUNT_READS.sample_summary", sample=samples.reset_index().itertuples()),
 #        expand("cov/{sample.sample}.depthOfCov.COUNT_READS.sample_statistics", sample=samples.reset_index().itertuples()),
 #        expand("cov/bbmap/{sample.sample}.bbmap.covstats.txt", sample=samples.reset_index().itertuples()),
