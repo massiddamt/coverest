@@ -1,4 +1,8 @@
-
+edit: 	projectname:
+	pipeline
+	pipeline link
+	path
+	cloud_address
 
 
 PROJECT NAME:
