@@ -20,4 +20,7 @@ rules:
         params: "binsize=1000000 -Xmx8g "
     multiqc:
         arguments: ""
+    qualimap:
+        params: "-c -nw 400 -nr 1000 -sd -sdmode 0 --java-mem-size=20G"
+        outformat: "PDF:HTML "
 samples: my.bam.list

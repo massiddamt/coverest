@@ -4,7 +4,9 @@ rule multiqc:
 #       expand("cov/{sample.sample}.depthOfCov.COUNT_READS.sample_statistics", sample=samples.reset_index().itertuples()),
        expand("cov/bbmap/{sample.sample}.bbmap.covstats.txt", sample=samples.reset_index().itertuples()),
        expand("cov/bbmap/{sample.sample}.bbmap.hist.txt", sample=samples.reset_index().itertuples()),
-       expand("cov/bbmap/{sample.sample}.bbmap.bincov.txt", sample=samples.reset_index().itertuples())
+       expand("cov/bbmap/{sample.sample}.bbmap.bincov.txt", sample=samples.reset_index().itertuples()),
+       expand("cov/qualimap/{sample.sample}.pdf", sample=samples.reset_index().itertuples())
+
 
     output:
         report("qc/multiqc.html", caption="../report/multiqc.rst", category="MULTIQC")

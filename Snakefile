@@ -17,6 +17,7 @@ rule all:
 #        expand("cov/bbmap/{sample.sample}.bbmap.hist.txt", sample=samples.reset_index().itertuples()),
 #        expand("cov/bbmap/{sample.sample}.bbmap.bincov.txt", sample=samples.reset_index().itertuples()),
         "qc/multiqc.html",
+#        expand("cov/qualimap/{sample.sample}.pdf", sample=samples.reset_index().itertuples()),
         "cov/plots/bbmap_coverage.png",
         "cov/plots/gatk_coverage.png",
 
@@ -35,4 +36,6 @@ include:
     include_prefix + "/multiqc.smk"
 include:
     include_prefix + "/plots.smk"
+include:
+    include_prefix + "/qualimap.smk"
 
