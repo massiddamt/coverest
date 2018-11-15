@@ -5,7 +5,7 @@ references:
 
 genome_fasta: "oar_ref_Oar_v4.0_fixChr.fa"
 repository:
-  gatkdoc_plugin: "https://massiddaMT@bitbucket.org/massiddaMT/gatkdoc_plugin.git"
+  gatkdoc_plugin: "https://bitbucket.org/massiddaMT/gatkdoc_plugin.git"
 
 paths:
   to_gatk: "/ELS/els9/users/biosciences/software/gatk-3.7"
