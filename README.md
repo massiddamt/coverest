@@ -1,6 +1,4 @@
- # COVerest
-Snakemake enabled pipeline for coverage estimation
-
+Snakemake enabled pipeline for coverage estimation with GATK DepthOfCoverage
 
 ## Authors
 
@@ -68,3 +66,4 @@ The pipeline installs a MultiQC plugin for DepthOfCoverage output inclusion in t
 using `$N` cores
 
 More details to execute Snakemake at [Snakemake documentation](https://snakemake.readthedocs.io).
+
