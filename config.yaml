@@ -1,15 +1,15 @@
 references:
-    basepath: path_to_references_data
-    provider: "_provider_"
-    release: "_release_"
+    basepath: "path_to_references_data"
+    provider: "reference_provider"
+    release: "reference_release"
 
-genome_fasta: _genome_fasta
+genome_fasta: "_genome_fasta"
 repository:
   gatkdoc_plugin: "https://bitbucket.org/massiddaMT/gatkdoc_plugin.git"
 
 paths:
-  to_gatk: "gatk_dir"
-  to_tmp: "tmp_dir"
+  to_gatk: "path_to_software-gatk3.7"
+  to_tmp: "path_to_tmp_dir"
 
 
 rules:
