@@ -1,5 +1,5 @@
 references:
-    basepath: references_dir
+    basepath: path_to_references_data
     provider: "_provider_"
     release: "_release_"
 
