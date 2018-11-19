@@ -1,9 +1,9 @@
 references:
-    basepath: "references_dir"
+    basepath: references_dir
     provider: "_provider_"
     release: "_release_"
 
-genome_fasta: "_genome_fasta_"
+genome_fasta: _genome_fasta
 repository:
   gatkdoc_plugin: "https://bitbucket.org/massiddaMT/gatkdoc_plugin.git"
 
