@@ -20,7 +20,8 @@ rule multiqc:
        expand("cov/bbmap/{sample.sample}.bbmap.covstats.txt", sample=samples.reset_index().itertuples()),
        expand("cov/bbmap/{sample.sample}.bbmap.hist.txt", sample=samples.reset_index().itertuples()),
        expand("cov/bbmap/{sample.sample}.bbmap.bincov.txt", sample=samples.reset_index().itertuples()),
-       expand("cov/qualimap/{sample.sample}.pdf", sample=samples.reset_index().itertuples())
+       expand("cov/qualimap/{sample.sample}/report.pdf",
+              sample=samples.reset_index().itertuples())
 
 
     output:

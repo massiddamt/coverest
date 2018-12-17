@@ -7,10 +7,10 @@ rule qualimap:
         lambda wildcards: get_path(wildcards, samples, 'bamlist')
 
     output:
-        "cov/qualimap/{sample}.pdf"
+        "cov/qualimap/{sample}/report.pdf"
 
     params:
-        dir = "cov/qualimap/",
+        outdir = "cov/qualimap/{sample}",
         params = config.get("rules").get("qualimap").get("params"),
         outformat = config.get("rules").get("qualimap").get("outformat")
 
@@ -25,8 +25,7 @@ rule qualimap:
     shell:
         "qualimap bamqc "
         "-bam {input} "
-        "-outdir {params.dir} "
-        "-outfile {output} "
+        "-outdir {params.outdir} "
         "{params.params} "
         "-outformat {params.outformat} "
         "-nt {threads} "
