@@ -1,6 +1,6 @@
 rule active_gatk:
     output:
-        touch("logs/gatk/gatk_activation.done")
+        touch("gatk_activation.done")
 
     params:
         config.get("paths").get("to_gatk")
