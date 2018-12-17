@@ -28,6 +28,7 @@ rule bbmap:
         "out={output.covstats} "
         "hist={output.hist} "
         "bincov={output.bincov} "
+        "t={threads} "
         "{params} "
         ">& {log}"
 
